@@ -347,6 +347,6 @@ alert_data = {'MAX' => 4, 'MIN' => 0}
 np.search(".content_box>.body>ul>li").each{|e|
 	alert_data[title_to_country_code(e.search('a')[0]["title"])] = icon_url_to_level(e.search('img')[0]["src"])
 }
-File.open("country_alert_data.js","w") do |f|
+File.open("js/country_alert_data.js","w") do |f|
   f.write('alert_data = '+alert_data.to_json)
 end
